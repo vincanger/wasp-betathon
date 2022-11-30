@@ -14,7 +14,7 @@ const Projects = () => {
             <h2 className='text-2xl text-neutral-700 underline decoration-yellow-500 text-center'>
               Submitted Projects{' '}
             </h2>
-            <div className='mt-12 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0'>
+            <div className='mt-12 gap-6 lg:grid lg:grid-cols-3'>
               {status === 'success' && projects.length ? (
                 projects.map((project) => (
                   <div key={project.name} className='group relative'>

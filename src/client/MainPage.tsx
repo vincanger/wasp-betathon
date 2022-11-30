@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import betathonLogo from './betathonLogo.png';
 import './Main.css';
 import Nav from './components/Navbar';
