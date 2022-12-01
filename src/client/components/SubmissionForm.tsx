@@ -209,10 +209,10 @@ const SubmissionForm = () => {
                               strokeLinejoin='round'
                             />
                           </svg>
-                          <div className='flex text-sm text-gray-600'>
+                          <div className='flex text-sm text-gray-600 justify-center'>
                             <label
                               htmlFor='file-upload'
-                              className='relative cursor-pointer rounded-md bg-white font-medium text-yellow-600 focus-within:outline-none hover:text-yellow-500 outline-none focus:outline-none'
+                              className='relative cursor-pointer rounded-md bg-white font-medium underline text-yellow-600 focus-within:outline-none hover:text-yellow-500 outline-none focus:outline-none'
                             >
                               {/** UPLOAD IMAGE */}
                               {isUploading ? (
@@ -237,7 +237,7 @@ const SubmissionForm = () => {
                                   ></path>
                                 </svg>
                               ) : (
-                                <span>Upload a file</span>
+                                <span>Upload an Image</span>
                               )}
                               <input
                                 id='file-upload'
@@ -248,10 +248,8 @@ const SubmissionForm = () => {
                                 accept='image/png, image/jpeg, image/jpg'
                               />
                             </label>
-                            {!!file ? (
+                            {!!file && (
                               <p className='pl-1'>{file} uploaded</p>
-                            ) : (
-                              <p className='pl-1'>or drag and drop</p>
                             )}
                           </div>
                           <p className='text-xs text-gray-500'>PNG, JPG, GIF up to 10MB</p>
