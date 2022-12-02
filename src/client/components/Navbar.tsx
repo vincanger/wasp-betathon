@@ -17,7 +17,6 @@ export const TwitterIcon = () => (
 );
 
 const Navbar = () => {
-
   function scrollToTargetAdjusted() {
     var element = document.getElementById('submission');
     var headerOffset = 75;
@@ -66,24 +65,25 @@ const Navbar = () => {
         px-2.5 py-1 rounded
         hover:bg-neutral-200
         transition ease-out duration-200
-        lg:flex items-center space-x-2 text-xs
+        flex items-center space-x-2 text-xs
         group
       `}
     >
       <div
         className={`
-          flex h-3 w-3 items-center justify-center
+          flex h-3 w-3 items-center
           group-hover:h-4 group-hover:w-4
           group-hover:text-yellow-500
         `}
       >
         <Star strokeWidth={2} />
       </div>
-      <span className='truncate'>Star us on GitHub</span>
+      <div>
+        <span className='hidden lg:inline-block'>Star us on</span>
+        <span >{' '}GitHub</span>
+      </div>
     </a>
   );
-
-
 
   return (
     <>
@@ -95,7 +95,7 @@ const Navbar = () => {
               relative mx-auto 
               flex justify-between
               h-16
-              container lg:px-20 md:px-16 pl-2
+              container lg:px-20 md:px-10 pl-2
             '
           >
             <div
@@ -158,7 +158,7 @@ const Navbar = () => {
                 </button>
               </div>{' '}
               {/* EOF left side */}
-              <div className='hidden md:flex flex-1 items-center justify-end gap-2 space-x-2'>
+              <div className='hidden md:flex lg:flex-1 items-center justify-end gap-2 space-x-2'>
                 {' '}
                 {/* Navbar right side */}
                 <GitHubButton />
