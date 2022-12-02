@@ -11,7 +11,7 @@ const MainPage = () => {
       <Nav />
       <main>
         <img
-          id='video'
+          alt='betathon logo'
           src={betathonLogo}
           className=' mb-16 shadow-lg border-2 rounded-md border-yellow-500/25'
           width={600}

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useQuery } from '@wasp/queries';
 import getProjects from '@wasp/queries/getProjects';
 import betathonLogo from '../betathonLogo.png';
 
 const Projects = () => {
-  const { data: projects, error, isLoading, status } = useQuery(getProjects);
+  const { data: projects, status } = useQuery(getProjects);
 
   return (
     <>
@@ -26,7 +26,7 @@ const Projects = () => {
                       />
                     </div>
                     <h3 className='mt-6 text-base font-semibold text-neutral-700'>
-                      <a href={!!project.website ? '//' + project.website : null} target='_blank'>
+                      <a href={!!project.website ? '//' + project.website : null} target='_blank' rel='noreferrer'>
                         <span className='absolute inset-0' />
                         {project.name}
                       </a>
@@ -40,8 +40,8 @@ const Projects = () => {
                 ))
               ) : (
                 <div className='col-span-3 border border-yellow-500/25 rounded-md bg-yellow-100 bg-opacity-10 shadow-md p-5 text-center  justify-self-center'>
-                  <p>Nothing to see here... yet</p>
-                  <p className='text-sm mt-2'>
+                  <p className='font-semibold'>Nothing to see here... yet</p>
+                  <p className='text-sm mt-4'>
                     Looking for some inspiration? <br />
                     Check out our{' '}
                     <a
@@ -50,7 +50,10 @@ const Projects = () => {
                     >
                       {' '}
                       Example Wasp Apps
-                    </a>
+                    </a>{' '}
+                    <p className='text-sm mt-4'>
+                      BTW, This is also a Wasp App! 🧙‍♂️
+                    </p>
                   </p>
                 </div>
               )}
