@@ -3,7 +3,7 @@ import { useQuery } from '@wasp/queries';
 import getProjects from '@wasp/queries/getProjects';
 import betathonLogo from '../betathonLogo.png';
 
-const Projects = () => {
+const Projects = () => {  
   const { data: projects, status } = useQuery(getProjects);
 
   return (

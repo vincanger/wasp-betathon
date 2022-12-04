@@ -19,7 +19,7 @@ const SubmissionForm = () => {
 
   const onFileUpload = async (event) => {
     setIsUploading(true);
-    const clientId = 'd4ecb4220cf055b'
+    const clientId = 'd4ecb4220cf055b';
     const auth = 'Client-ID ' + clientId;
 
     const formData = new FormData();
@@ -67,13 +67,9 @@ const SubmissionForm = () => {
 
   return (
     <>
-      <div className='skew-y-min2 border-double border-2 border-t border-b border-yellow-500/25 w-full mb-10'></div>
-
-      <div className='relative mt-10 md:pt-6 px-3 sm:mt-0 sm:px-20 sm:mx-10 lg:w-1/2' id='submission'>
-        <h2 className='text-2xl text-neutral-700 mb-5 mx-1 underline decoration-yellow-500'>Submit a Project</h2>
-
+      <div className='relative mt-6 px-3 sm:mt-0 sm:px-20 sm:mx-10 lg:w-1/2' id='submission'>´
         <div className='md:grid md:grid-cols-2 md:gap-6'>
-          <div className='mt-5 md:col-span-2 md:mt-0'>
+          <div className='md:col-span-2 md:mt-0'>
             <form onSubmit={handleSubmit} method='POST'>
               <div className='overflow-hidden shadow sm:rounded-md'>
                 <div className='bg-white px-4 py-5 sm:p-6'>
@@ -248,9 +244,7 @@ const SubmissionForm = () => {
                                 accept='image/png, image/jpeg, image/jpg'
                               />
                             </label>
-                            {!!file && (
-                              <p className='pl-1'>{file} uploaded</p>
-                            )}
+                            {!!file && <p className='pl-1'>{file} uploaded</p>}
                           </div>
                           <p className='text-xs text-gray-500'>PNG, JPG, GIF up to 10MB</p>
                         </div>
@@ -264,7 +258,7 @@ const SubmissionForm = () => {
                     disabled={isUploading}
                     className='inline-flex justify-center rounded-md border border-transparent bg-yellow-600 py-2 px-4 text-sm font-medium text-white shadow-sm disabled:opacity-60 enabled:hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2'
                   >
-                    Save
+                    Submit
                   </button>
                 </div>
               </div>

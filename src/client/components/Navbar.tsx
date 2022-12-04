@@ -37,7 +37,7 @@ const Navbar = () => {
       <span className='hidden md:block ml-3 font-semibold text-lg text-neutral-700'>
         Wasp <sup className='text-base text-yellow-500'>βetathon</sup>
       </span>
-      <span className='sm:hidden text-base ml-3 font-semibold text-yellow-500'>βetathon</span>
+      <span className='xs:block md:hidden text-base ml-3 font-semibold text-yellow-500'>βetathon</span>
     </div>
   );
 

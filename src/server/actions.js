@@ -6,3 +6,11 @@ export const submitProject = async (project, context) => {
 
   return newProject;
 };
+
+export const registerProject = async (registration, context) => {
+  const registered = context.entities.Registration.create({
+    data: registration,
+  });
+
+  return registered;
+};

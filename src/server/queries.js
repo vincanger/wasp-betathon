@@ -9,3 +9,7 @@ export const getProjects = async (args, context) => {
     },
   });
 };
+
+export const getParticipants = async (args, context) => {
+  return context.entities.Registration.count();
+}
