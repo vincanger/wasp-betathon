@@ -67,11 +67,11 @@ const SubmissionForm = () => {
 
   return (
     <>
-      <div className='relative mt-6 px-3 sm:mt-0 sm:px-20 sm:mx-10 lg:w-1/2' id='submission'>´
+      <div className='relative mt-6 pt-6 px-3 sm:mt-0 sm:px-20 sm:mx-10 lg:w-1/2 w-4/5' id='submission'>
         <div className='md:grid md:grid-cols-2 md:gap-6'>
           <div className='md:col-span-2 md:mt-0'>
             <form onSubmit={handleSubmit} method='POST'>
-              <div className='overflow-hidden shadow sm:rounded-md'>
+              <div className='overflow-hidden shadow-md sm:rounded-md'>
                 <div className='bg-white px-4 py-5 sm:p-6'>
                   <div className='grid grid-cols-6 gap-6'>
                     <div className='col-span-6'>
