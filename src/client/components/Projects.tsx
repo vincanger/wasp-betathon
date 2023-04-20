@@ -1,9 +1,9 @@
 import React from 'react';
 import { useQuery } from '@wasp/queries';
 import getProjects from '@wasp/queries/getProjects';
-import betathonLogo from '../betathonLogo.png';
+import hackathonLogo from '../hackathon-logo-static.png';
 
-const Projects = () => {  
+const Projects = () => {
   const { data: projects, status } = useQuery(getProjects);
 
   return (
@@ -20,7 +20,7 @@ const Projects = () => {
                   <div key={project.name} className='group relative'>
                     <div className='relative h-80 w-full overflow-hidden rounded-lg bg-white group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1'>
                       <img
-                        src={project.image || betathonLogo}
+                        src={project.image || hackathonLogo}
                         alt={project.name}
                         className='h-full w-full object-cover object-center'
                       />
@@ -51,10 +51,8 @@ const Projects = () => {
                       {' '}
                       Example Wasp Apps
                     </a>{' '}
-                    <p className='text-sm mt-4'>
-                      BTW, This is also a Wasp App! 🧙‍♂️
-                    </p>
                   </p>
+                  <p className='text-sm mt-4'>BTW, This is also a Wasp App! 🧙‍♂️</p>
                 </div>
               )}
             </div>

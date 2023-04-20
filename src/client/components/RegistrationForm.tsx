@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import registerProject from '@wasp/actions/registerProject';
 
 export type Registration = {
@@ -17,8 +17,7 @@ const RegistrationForm = () => {
       alert('Registered successfully!');
       event.target.reset();
     } catch (e) {
-      console.error('Error while registering', e);
-      alert('Error while registering');
+      alert(e.message || 'Error while registering');
     }
   };
 

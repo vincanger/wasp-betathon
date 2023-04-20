@@ -2,6 +2,8 @@ import React from 'react';
 import waspLogo from '../waspLogo.png';
 import { Star } from 'react-feather';
 
+const RULES_LINK = 'https://wasp-lang.notion.site/Wasp-Hackathon-2-799bc38b70404eb681552378f2811193';
+
 export const DiscordIcon = () => (
   <svg width='24' height='24' fill='currentColor' viewBox='0 5 30.67 23.25'>
     <title>Discord</title>
@@ -16,12 +18,12 @@ export const TwitterIcon = () => (
   </svg>
 );
 
-const Navbar = () => {
+const Navbar = ({ startDate }) => {
   function scrollToTargetAdjusted() {
-    var element = document.getElementById('submission');
-    var headerOffset = 75;
-    var elementPosition = element.getBoundingClientRect().top;
-    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    const element = document.getElementById('submit-project');
+    const headerOffset = 75;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
     window.scrollTo({
       top: offsetPosition,
@@ -35,9 +37,9 @@ const Navbar = () => {
         <img src={waspLogo} width={35} height={35} alt='Wasp Logo' />
       </a>
       <span className='hidden md:block ml-3 font-semibold text-lg text-neutral-700'>
-        Wasp <sup className='text-base text-yellow-500'>βetathon</sup>
+        Wasp <sup className='text-base text-yellow-500'>Hackathon #2</sup>
       </span>
-      <span className='xs:block md:hidden text-base ml-3 font-semibold text-yellow-500'>βetathon</span>
+      <span className='xs:block md:hidden text-base ml-3 font-semibold text-yellow-500'>Hackathon #2</span>
     </div>
   );
 
@@ -80,8 +82,24 @@ const Navbar = () => {
       </div>
       <div>
         <span className='hidden lg:inline-block'>Star us on</span>
-        <span >{' '}GitHub</span>
+        <span> GitHub</span>
       </div>
+    </a>
+  );
+
+  const WaspNewIcon = () => (
+    <a href='https://github.com/wasp-lang/starters' target='_blank' rel='noreferrer'>
+      <button
+        className={`
+        hidden lg:block text-xs
+        px-2.5 py-1 rounded
+        bg-yellow-500 text-white
+        hover:bg-yellow-400
+        transition ease-out duration-200
+      `}
+      >
+        {'wasp new <app> -t <template>'}
+      </button>
     </a>
   );
 
@@ -111,7 +129,7 @@ const Navbar = () => {
                 {/* Navbar left side */}
                 <Logo />
                 <div className='pl-2 sm:ml-6 sm:space-x-4 lg:flex'>
-                  <a href='https://wasp-lang.notion.site/Wasp-Betathon-f68015a68a15419e978c0648031a8634'>
+                  <a href={RULES_LINK} target='_blank'>
                     <span
                       className={`
                         py-5 px-1
@@ -151,7 +169,7 @@ const Navbar = () => {
                         <line x1='12' y1='19' x2='20' y2='19'></line>
                       </svg>{' '}
                       <span className='pl-2 gradient-text hover:text-neutral-400 transition ease-out duration-200'>
-                        Submit a Project
+                        {new Date() > startDate ? 'Submit a Project' : 'Register'}
                       </span>
                     </div>
                   </span>
@@ -161,7 +179,8 @@ const Navbar = () => {
               <div className='hidden md:flex lg:flex-1 items-center justify-end gap-2 space-x-2'>
                 {' '}
                 {/* Navbar right side */}
-                <GitHubButton />
+                <WaspNewIcon />
+                {/* <GitHubButton /> */}
                 <SocialIcon Icon={DiscordIcon} url='https://discord.gg/rzdnErX' />
                 <SocialIcon Icon={TwitterIcon} url='https://twitter.com/WaspLang' />
               </div>{' '}

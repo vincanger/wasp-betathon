@@ -1,34 +1,44 @@
-app hackathonBetaSubmissions {
+app hackathonApp {
   wasp: {
-    version: "^0.7.0"
+    version: "^0.10.0"
   },
   db: {
     system: PostgreSQL
   },
-  title: "hackathon-beta-submissions",
+  title: "Wasp Hackathon #2",
+  emailSender: {
+    provider: SendGrid,
+    defaultFrom: {
+        name: "Wasp Hackathon #2",
+        email: "vince@wasp-lang.dev"
+    },
+  },
   dependencies: [
     ("react-feather", "2.0.10"),
-    ("react-fast-marquee", "1.3.5")
+    ("react-fast-marquee", "1.3.5"),
+    ("@tailwindcss/forms", "^0.5.3"),
+    ("@tailwindcss/typography", "^0.5.7")
   ]
 }
 
 entity Registration {=psl
-  name        String  @id @unique
-  email       String  @unique
-  createdAt   DateTime @default(now())
+  email       String    @id @unique
+  name        String    
+  createdAt   DateTime  @default(now())
 psl=}
 
 entity Submission {=psl
-  name       String  @id @unique
-  email       String  @unique
+  email       String    @id @unique
+  name        String    @unique
   github      String
   description String  
   twitter     String?
   country     String? 
   website     String?
   image       String?
-  approved    Boolean @default(false)
-  createdAt   DateTime @default(now())
+  approved    Boolean   @default(false)
+  noticeSent  Boolean   @default(false)
+  createdAt   DateTime  @default(now())
 psl=}
 
 route RootRoute { path: "/", to: MainPage }
@@ -38,7 +48,7 @@ page MainPage {
 
 action submitProject {
   fn: import { submitProject } from "@server/actions.js",
-  entities: [Submission]
+  entities: [Submission, Registration]
 }
 
 action registerProject {
@@ -54,4 +64,15 @@ query getProjects {
 query getParticipants {
   fn: import { getParticipants } from "@server/queries.js",
   entities: [Registration]
+}
+
+job notifyApprovedSubmissions {
+  executor: PgBoss,
+  perform: {
+    fn: import { checkSubmissionsAndSend } from "@server/workers.js"
+  },
+  schedule: {
+    cron: "0 * * * *" // checks every hour
+  },
+  entities: [Submission]
 }

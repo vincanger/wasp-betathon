@@ -114,3 +114,20 @@ code {
 :focus {
   outline: 1px solid #bf9900;
 }
+
+.countdown {
+  display: flex;
+  
+}
+
+.number-wrapper {
+  display: inline-block;
+  margin-right: 1rem;
+  font-size: 3rem;
+  text-align: center;
+  transition: transform 0.5s ease-in-out;
+}
+
+.number-wrapper.active {
+  transform: translateY(-100%);
+}
