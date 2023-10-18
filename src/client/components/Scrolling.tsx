@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Marquee from 'react-fast-marquee';
 import { useQuery } from '@wasp/queries';
 import getParticipants from '@wasp/queries/getParticipants';

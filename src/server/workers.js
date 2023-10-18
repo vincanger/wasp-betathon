@@ -2,11 +2,11 @@ import { emailSender } from '@wasp/email/index.js'
 
 const emailToSend = {
   to: '',
-  subject: 'Your Hackathon Project has been approved!',
-  text: 'Hey There! Your Hackathon Project has been approved and should now be visible!',
+  subject: 'Your Wasp SaaS-a-Thon Project has been approved!',
+  text: 'Hey There! Your Wasp SaaS-a-Thon Project has been approved and should now be visible!',
   html: `<p>Hey There!</p>
-    <p>Your Hackathon Project has been approved and should now be visible!</p>
-    <p>Thanks so much for participating in the Wasp Hackathon #2!</p>
+    <p>Your Wasp SaaS-a-Thon Project has been approved and should now be visible!</p>
+    <p>Thanks so much for participating in the Wasp SaaS-a-Thon!</p>
     <p>Good Luck!</p>
     <p>-Vince & The Wasp Team</p>
     `,

@@ -1,8 +1,9 @@
-import React from 'react';
 import waspLogo from '../waspLogo.png';
 import { Star } from 'react-feather';
 
-const RULES_LINK = 'https://wasp-lang.notion.site/Wasp-Hackathon-2-799bc38b70404eb681552378f2811193';
+const RULES_LINK = 'https://wasp-lang.notion.site/Wasp-SaaS-a-Thon-bd53e032d22f460d8578343f909f3bc4?pvs=4';
+const TWITTER_LINK = 'https://twitter.com/WaspLang';
+const DISCORD_LINK = 'https://discord.gg/rzdnErX';
 
 export const DiscordIcon = () => (
   <svg width='24' height='24' fill='currentColor' viewBox='0 5 30.67 23.25'>
@@ -37,9 +38,9 @@ const Navbar = ({ startDate }) => {
         <img src={waspLogo} width={35} height={35} alt='Wasp Logo' />
       </a>
       <span className='hidden md:block ml-3 font-semibold text-lg text-neutral-700'>
-        Wasp <sup className='text-base text-yellow-500'>Hackathon #2</sup>
+        Wasp <sup className='text-base text-yellow-500'>SaaS-a-Thon 💸</sup>
       </span>
-      <span className='xs:block md:hidden text-base ml-3 font-semibold text-yellow-500'>Hackathon #2</span>
+      <span className='xs:block md:hidden text-base ml-3 font-semibold text-yellow-500'>SaaS-a-Thon 💸</span>
     </div>
   );
 
@@ -98,7 +99,7 @@ const Navbar = ({ startDate }) => {
         transition ease-out duration-200
       `}
       >
-        {'wasp new <app> -t <template>'}
+        {'wasp new <app-name> -t saas'}
       </button>
     </a>
   );
@@ -153,7 +154,7 @@ const Navbar = ({ startDate }) => {
                         text-base font-medium
                       `}
                   >
-                    <div className='relative inline-flex items-center px-3 py-2 bg-gray-100 rounded border border-neutral-500 text-neutral-700 hover:text-neutral-400 hover:border-neutral-400 hover:animate-pulse transition ease-out duration-200'>
+                    <div className='relative hidden sm:inline-flex items-center px-3 py-2 bg-gray-100 rounded border border-neutral-500 text-neutral-700 hover:text-neutral-400 hover:border-neutral-400 hover:animate-pulse transition ease-out duration-200'>
                       <svg
                         xmlns='http://www.w3.org/2000/svg'
                         width='16'
@@ -169,7 +170,7 @@ const Navbar = ({ startDate }) => {
                         <line x1='12' y1='19' x2='20' y2='19'></line>
                       </svg>{' '}
                       <span className='pl-2 gradient-text hover:text-neutral-400 transition ease-out duration-200'>
-                        {new Date() > startDate ? 'Submit a Project' : 'Register'}
+                        Register
                       </span>
                     </div>
                   </span>
@@ -181,8 +182,8 @@ const Navbar = ({ startDate }) => {
                 {/* Navbar right side */}
                 <WaspNewIcon />
                 {/* <GitHubButton /> */}
-                <SocialIcon Icon={DiscordIcon} url='https://discord.gg/rzdnErX' />
-                <SocialIcon Icon={TwitterIcon} url='https://twitter.com/WaspLang' />
+                <SocialIcon Icon={DiscordIcon} url={DISCORD_LINK} />
+                <SocialIcon Icon={TwitterIcon} url={TWITTER_LINK} />
               </div>{' '}
               {/* EOF right side */}
             </div>

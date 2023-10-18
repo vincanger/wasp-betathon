@@ -1,15 +1,15 @@
 app hackathonApp {
   wasp: {
-    version: "^0.11.0"
+    version: "^0.11.6"
   },
   db: {
     system: PostgreSQL
   },
-  title: "Wasp Hackathon #2",
+  title: "Wasp SaaS-a-Thon",
   emailSender: {
     provider: SendGrid,
     defaultFrom: {
-        name: "Wasp Hackathon #2",
+        name: "Wasp SaaS-a-Thon",
         email: "vince@wasp-lang.dev"
     },
   },

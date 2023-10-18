@@ -1,7 +1,6 @@
-import React from 'react';
 import { useQuery } from '@wasp/queries';
 import getProjects from '@wasp/queries/getProjects';
-import hackathonLogo from '../hackathon-logo-static.png';
+import hackathonLogo from '../saasathon-logo.png';
 
 const Projects = () => {
   const { data: projects, status } = useQuery(getProjects);
@@ -41,18 +40,36 @@ const Projects = () => {
               ) : (
                 <div className='col-span-3 border border-yellow-500/25 rounded-md bg-yellow-100 bg-opacity-10 shadow-md p-5 text-center  justify-self-center'>
                   <p className='font-semibold'>Nothing to see here... yet</p>
-                  <p className='text-sm mt-4'>
+                  <div className='text-sm mt-4'>
                     Looking for some inspiration? <br />
-                    Check out our{' '}
-                    <a
-                      className='text-yellow-600 underline decoration-neutral-700 '
-                      href='https://github.com/wasp-lang/wasp/tree/main/examples'
-                    >
-                      {' '}
-                      Example Wasp Apps
-                    </a>{' '}
-                  </p>
-                  <p className='text-sm mt-4'>BTW, This is also a Wasp App! 🧙‍♂️</p>
+                    <p className='text-sm pt-2'>Check out these SaaS apps made w/ Wasp:</p>
+                    <ul className='mt-2'>
+                      <li>
+                        <a
+                          className='text-yellow-600 underline decoration-neutral-700 '
+                          href='https://coverlettergpt.xyz'
+                        >
+                          ✍️ CoverLetterGPT (Open-Source!)
+                        </a>{' '}
+                      </li>
+                      <li>
+                        <a
+                          className='text-yellow-600 underline decoration-neutral-700 '
+                          href='https://www.amicus.work/'
+                        >
+                          💼 Amicus
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className='text-yellow-600 underline decoration-neutral-700 '
+                          href='https://description-generator.online/'
+                        >
+                          🧵 Etsy Description Generator
+                        </a>{' '}
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               )}
             </div>

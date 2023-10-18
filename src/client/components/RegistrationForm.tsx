@@ -1,4 +1,3 @@
-import React from 'react';
 import registerProject from '@wasp/actions/registerProject';
 
 export type Registration = {

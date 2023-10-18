@@ -1,4 +1,0 @@
--- AlterTable
-ALTER TABLE "Submission" ALTER COLUMN "country" DROP NOT NULL,
-ALTER COLUMN "twitter" DROP NOT NULL,
-ALTER COLUMN "image" DROP NOT NULL;
