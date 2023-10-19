@@ -13,7 +13,7 @@ const RegistrationForm = () => {
 
     try {
       await registerProject(value as Registration);
-      alert('Registered successfully!');
+      alert('Registered successfully! Please check your e-mail.');
       event.target.reset();
     } catch (e) {
       alert(e.message || 'Error while registering');
@@ -47,7 +47,7 @@ const RegistrationForm = () => {
                         Email address *
                       </label>
                       <input
-                        type='text'
+                        type='email'
                         name='email'
                         id='email'
                         required
@@ -57,7 +57,25 @@ const RegistrationForm = () => {
                     </div>
                   </div>
                 </div>
-                <div className='bg-gray-50 px-4 py-3 text-right sm:px-6'>
+                <div className='flex flex-row w-full items-end justify-between bg-gray-50 px-4 py-3 text-right sm:px-6'>
+                  <div className='flex flex-row items-center justify-start text-sm font-medium italic text-gray-700'>
+                    <input
+                      type='checkbox'
+                      name='rules'
+                      id='rules'
+                      required
+                      className='m-1 rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm'
+                    />
+                    <span className='block'>
+                      I've read all the{' '}
+                      <a
+                        href='https://wasp-lang.notion.site/Wasp-SaaS-a-Thon-bd53e032d22f460d8578343f909f3bc4?pvs=4'
+                        className='text-yellow-600 underline decoration-neutral-700'
+                      >
+                        rules & conditions.
+                      </a>
+                    </span>
+                  </div>
                   <button
                     type='submit'
                     className='inline-flex justify-center rounded-md border border-transparent bg-yellow-600 py-2 px-4 text-sm font-medium text-white shadow-sm disabled:opacity-60 enabled:hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2'

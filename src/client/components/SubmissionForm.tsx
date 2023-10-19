@@ -96,7 +96,7 @@ const SubmissionForm = ({ startDate, endDate }) => {
                             Email Address *
                           </label>
                           <input
-                            type='text'
+                            type='email'
                             name='email'
                             id='email'
                             required
@@ -138,7 +138,7 @@ const SubmissionForm = ({ startDate, endDate }) => {
 
                         <div className='col-span-6'>
                           <label htmlFor='website' className='block text-sm font-medium text-gray-700'>
-                            Website of Deployed Project
+                            Website of Deployed Project *
                           </label>
                           <div className='mt-1 flex rounded-md shadow-sm'>
                             <span className='inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-sm text-gray-500'>
@@ -148,6 +148,7 @@ const SubmissionForm = ({ startDate, endDate }) => {
                               type='text'
                               name='website'
                               id='website'
+                              required
                               className='block w-full flex-1 rounded-none rounded-r-md border border-gray-300 focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm'
                               placeholder='www.example.com'
                             />
